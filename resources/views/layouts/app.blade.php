@@ -26,28 +26,28 @@
 
             <nav>
                 <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
-                    
+
                 </ul>
             </nav>
 
             <div class="flex items-center text-lg no-underline pr-6">
-                <a class="" href="#">
+                <a class="" href="https://www.facebook.com/shm.tkch7/">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://www.instagram.com/shmtkch/">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://twitter.com/shmtkch">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a class="pl-6" href="#">
+                <a class="pl-6" href="https://www.linkedin.com/in/shoma-takeuchi-4515a5211/">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
         </div>
 
     </nav>
-    
+
     <!-- Text Header -->
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-12">
@@ -59,7 +59,7 @@
             </p>
         </div>
     </header>
-    
+
     <!-- Topic Nav -->
     <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
         <div class="block sm:hidden">
@@ -82,12 +82,12 @@
             </div>
         </div>
     </nav>
-    
+
 <div class="container mx-auto flex flex-wrap py-6">
 		<!-- Page Content -->
 	{{ $slot }}
 	</div>
-	
+
 	<footer class="w-full border-t bg-white pb-12">
         <div
             class="relative w-full flex items-center invisible md:visible md:pb-12"
