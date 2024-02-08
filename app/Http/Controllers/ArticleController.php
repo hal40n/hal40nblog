@@ -15,12 +15,13 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::paginate(10);
+        $articles = Article::paginate(5);
 
         $userIds = $articles->pluck('user_id')->unique()->toArray(); 
         $users = User::whereIn('id', $userIds)->get();
         
-        return view('articles.index', ['articles' => $articles, 'users' => $users]);
+        $recentlyPosts = Article::latest('created_at')->take(5)->get();
+        return view('articles.index', ['articles' => $articles, 'users' => $users, 'recentlyPosts' => $recentlyPosts]);
     }
 
     /**
@@ -87,5 +88,9 @@ class ArticleController extends Controller
     public function destroy(Article $article)
     {
         //
+    }
+    
+    public function recentlyPostsIndex() {
+
     }
 }

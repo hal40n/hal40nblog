@@ -12,34 +12,25 @@
 
 <!-- Scripts -->
 <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-<style>
-@import
-	url('https://fonts.googleapis.com/css?family=Karla:400,700&display=swap')
-	;
 
-.font-family-karla {
-	font-family: karla;
-}
-</style>
 <!-- AlpineJS -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 <!-- Font Awesome -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
-<body class="bg-white font-family-karla">
+<body class="bg-white font-serif">
 
 	<!-- Top Bar Nav -->
-    <nav class="w-full py-4 bg-blue-800 shadow">
+    <nav class="w-full py-4">
         <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
 
             <nav>
-                <ul class="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="#">Shop</a></li>
-                    <li><a class="hover:text-gray-200 hover:underline px-4" href="#">About</a></li>
+                <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
+                    
                 </ul>
             </nav>
 
-            <div class="flex items-center text-lg no-underline text-white pr-6">
+            <div class="flex items-center text-lg no-underline pr-6">
                 <a class="" href="#">
                     <i class="fab fa-facebook"></i>
                 </a>
@@ -61,10 +52,10 @@
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-12">
             <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="#">
-                Minimal Blog
+                Serene Wealth
             </a>
             <p class="text-lg text-gray-600">
-                Lorem Ipsum Dolor Sit Amet
+                 Simple Wisdom for Modern Finances
             </p>
         </div>
     </header>
@@ -82,50 +73,19 @@
         </div>
         <div :class="open ? 'block': 'hidden'" class="w-full flex-grow sm:flex sm:items-center sm:w-auto">
             <div class="w-full container mx-auto flex flex-col sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2">
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Technology</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Automotive</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Finance</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Politics</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Culture</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Sports</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Budgeting Tips</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Investment Insights</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Financial Freedom</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Frugal Living</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Money Psychology</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Money Mindfullness</a>
             </div>
         </div>
     </nav>
     
 <div class="container mx-auto flex flex-wrap py-6">
 		<!-- Page Content -->
-{{ $slot }}
-		
-		
-		<!-- Sidebar Section -->
-        <aside class="w-full md:w-1/3 flex flex-col items-center px-3">
-            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                <p class="text-xl font-semibold pb-5">About Us</p>
-                <p class="pb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.</p>
-                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
-                    Get to know us
-                </a>
-            </div>
-
-            <div class="w-full bg-white shadow flex flex-col my-4 p-6">
-                <p class="text-xl font-semibold pb-5">Instagram</p>
-                <div class="grid grid-cols-3 gap-3">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=1">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=2">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=3">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=4">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=5">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=6">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=7">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=8">
-                    <img class="hover:opacity-75" src="https://source.unsplash.com/collection/1346951/150x150?sig=9">
-                </div>
-                <a href="#" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-6">
-                    <i class="fab fa-instagram mr-2"></i> Follow @dgrzyb
-                </a>
-            </div>
-
-        </aside>
+	{{ $slot }}
 	</div>
 	
 	<footer class="w-full border-t bg-white pb-12">
@@ -154,7 +114,7 @@
                 <a href="#" class="uppercase px-3">Terms & Conditions</a>
                 <a href="#" class="uppercase px-3">Contact Us</a>
             </div>
-            <div class="uppercase pb-6">&copy; myblog.com</div>
+            <div class="uppercase pb-6">&copy; Shoma Takeuchi All rights reserved.</div>
         </div>
     </footer>
 
@@ -182,6 +142,5 @@
             }
         }
     </script>
-
 </body>
 </html>
