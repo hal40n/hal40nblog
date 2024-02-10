@@ -23,5 +23,6 @@ Route::get('/', function () {
 // })name('dashboard');
 
 Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
 require __DIR__.'/auth.php';
