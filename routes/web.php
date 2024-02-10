@@ -15,13 +15,13 @@ use App\Http\Controllers\ArticleController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })name('dashboard');
 
-Route::get('/articles', [ArticleController::class, 'index'])->middleware(['auth'])->name('articles.index');
+Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
 
 require __DIR__.'/auth.php';
