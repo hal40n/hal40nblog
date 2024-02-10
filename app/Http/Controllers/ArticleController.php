@@ -21,7 +21,7 @@ class ArticleController extends Controller
         $users = User::whereIn('id', $userIds)->get();
 
         $recentlyPosts = Article::latest('created_at')->take(5)->get();
-        return view('articles.index', ['articles' => $articles, 'users' => $users, 'recentlyPosts' => $recentlyPosts]);
+        return view('index', ['articles' => $articles, 'users' => $users, 'recentlyPosts' => $recentlyPosts]);
     }
 
     /**
@@ -90,7 +90,9 @@ class ArticleController extends Controller
         //
     }
 
-    public function recentlyPostsIndex() {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index']]);
 
     }
 }
