@@ -21,6 +21,7 @@ class ArticleFactory extends Factory
             'title' => $this->faker->sentence(),
             'body' => $this->faker->paragraph(),
             'user_id' => User::factory(),
+            'images' => $this->faker->imageUrl(),
             'created_at' => $date,
             'updated_at' => $date,
         ];

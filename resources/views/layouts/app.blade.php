@@ -26,7 +26,6 @@
 
             <nav>
                 <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
-
                 </ul>
             </nav>
 
@@ -55,7 +54,7 @@
                 Serene Wealth
             </a>
             <p class="text-lg text-gray-600">
-                 Simple Wisdom for Modern Finances
+                Simple Wisdom for Modern Finances
             </p>
         </div>
     </header>
@@ -63,11 +62,7 @@
     <!-- Topic Nav -->
     <nav class="w-full py-4 border-t border-b bg-gray-100" x-data="{ open: false }">
         <div class="block sm:hidden">
-            <a
-                href="#"
-                class="block md:hidden text-base font-bold uppercase text-center flex justify-center items-center"
-                @click="open = !open"
-            >
+            <a href="#" class="md:hidden text-base font-bold uppercase text-center flex justify-center items-center" @click="open = !open">
                 Topics <i :class="open ? 'fa-chevron-down': 'fa-chevron-up'" class="fas ml-2"></i>
             </a>
         </div>
@@ -89,21 +84,14 @@
 	</div>
 
 	<footer class="w-full border-t bg-white pb-12">
-        <div
-            class="relative w-full flex items-center invisible md:visible md:pb-12"
-            x-data="getCarouselData()"
-        >
-            <button
-                class="absolute bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 ml-12"
-                x-on:click="decrement()">
+        <div class="relative w-full flex items-center invisible md:visible md:pb-12" x-data="getCarouselData()">
+            <button class="absolute bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 ml-12" x-on:click="decrement()">
                 &#8592;
             </button>
             <template x-for="image in images.slice(currentIndex, currentIndex + 6)" :key="images.indexOf(image)">
                 <img class="w-1/6 hover:opacity-75" :src="image">
             </template>
-            <button
-                class="absolute right-0 bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 mr-12"
-                x-on:click="increment()">
+            <button class="absolute right-0 bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 mr-12" x-on:click="increment()">
                 &#8594;
             </button>
         </div>
