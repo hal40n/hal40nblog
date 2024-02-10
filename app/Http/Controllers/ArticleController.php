@@ -17,11 +17,8 @@ class ArticleController extends Controller
     {
         $articles = Article::paginate(5);
 
-        $userIds = $articles->pluck('user_id')->unique()->toArray();
-        $users = User::whereIn('id', $userIds)->get();
-
         $recentlyPosts = Article::latest('created_at')->take(5)->get();
-        return view('index', ['articles' => $articles, 'users' => $users, 'recentlyPosts' => $recentlyPosts]);
+        return view('index', ['articles' => $articles, 'recentlyPosts' => $recentlyPosts]);
     }
 
     /**
@@ -53,7 +50,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('articles.details', ['article' => $article]);
     }
 
     /**
@@ -92,7 +89,7 @@ class ArticleController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => ['index']]);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
 
     }
 }

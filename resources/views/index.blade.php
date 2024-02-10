@@ -5,21 +5,13 @@
 	        <!-- Posts Section -->
 	        <article class="flex flex-col shadow my-4">
                 <!-- Article Image -->
-                <a href="#" class="hover:opacity-75"> <img src="{{ $article->images }}">
+                <a href="{{ route('articles.show', [$article->id]) }}" class="hover:opacity-75"> <img src="{{ $article->images }}">
                 </a>
                 <div class="bg-white flex flex-col justify-start p-6">
 			        <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">Technology</a> <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{ $article->title }}</a>
-			        <p href="#" class="text-sm pb-3">
-				        By
-                            @foreach($users as $user)
-                                @if($user->id === $article->user_id)
-                                    <a href="#" class="font-semibold hover:text-gray-800">{{ $user->name }}</a>
-                                @endif
-                            @endforeach
-                        , Published on {{ $article->created_at }}
-                    </p>
-			        <a href="#" class="pb-6">{{ $article->body }}</a>
-                    <a href="#" class="uppercase text-gray-800 hover:text-black">
+			        <p href="#" class="text-sm pb-3">Published on {{ $article->created_at }}</p>
+			        <a href="{{ route('articles.show', [$article->id]) }}" class="pb-6">{{ $article->body }}</a>
+                    <a href="{{ route('articles.show', [$article->id]) }}" class="uppercase text-gray-800 hover:text-black">
                         Continue Reading <i class="fas fa-arrow-right"></i>
                     </a>
 		        </div>
