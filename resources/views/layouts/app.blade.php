@@ -19,34 +19,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
 </head>
 <body class="bg-white font-serif">
-
-	<!-- Top Bar Nav -->
-    <nav class="w-full py-4">
-        <div class="w-full container mx-auto flex flex-wrap items-center justify-between">
-
-            <nav>
-                <ul class="flex items-center justify-between font-bold text-sm uppercase no-underline">
-                </ul>
-            </nav>
-
-            <div class="flex items-center text-lg no-underline pr-6">
-                <a class="" href="https://www.facebook.com/shm.tkch7/">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a class="pl-6" href="https://www.instagram.com/shmtkch/">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a class="pl-6" href="https://twitter.com/shmtkch">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a class="pl-6" href="https://www.linkedin.com/in/shoma-takeuchi-4515a5211/">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-        </div>
-
-    </nav>
-
     <!-- Text Header -->
     <header class="w-full container mx-auto">
         <div class="flex flex-col items-center py-12">
@@ -84,7 +56,7 @@
 	</div>
 
 	<footer class="w-full border-t bg-white pb-12">
-        <div class="relative w-full flex items-center invisible md:visible md:pb-12" x-data="getCarouselData()">
+        <div class="relative w-full flex items-center invisible md:visible md:pb-12 {{ auth()->check() ? 'hidden' : '' }}" x-data="getCarouselData()">
             <button class="absolute bg-blue-800 hover:bg-blue-700 text-white text-2xl font-bold hover:shadow rounded-full w-16 h-16 ml-12" x-on:click="decrement()">
                 &#8592;
             </button>
@@ -102,7 +74,7 @@
                 <a href="#" class="uppercase px-3">Terms & Conditions</a>
                 <a href="#" class="uppercase px-3">Contact Us</a>
             </div>
-            <div class="uppercase pb-6">&copy; Shoma Takeuchi All rights reserved.</div>
+            <div class="uppercase pb-6">&copy; Hal40n All rights reserved.</div>
         </div>
     </footer>
 

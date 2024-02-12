@@ -24,5 +24,6 @@ Route::get('/', function () {
 
 Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('/create', [ArticleController::class, 'create'])->name('articles.create');
 
 require __DIR__.'/auth.php';
