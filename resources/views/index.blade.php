@@ -44,7 +44,14 @@
             <p class="pb-2">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis est eu odio sagittis tristique. Vestibulum ut finibus leo. In hac habitasse platea dictumst.
             </p>
-            <div class="flex justify-center items-center text-lg no-underline pr-6">
+            @auth
+                <form action="{{ route('articles.create') }}" method="GET">
+                    <button type="submit" class="inline-flex items-center px-5 py-2.5 mr-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                        記事作成
+                    </button>
+                </form>
+            @else
+                <div class="flex justify-center items-center text-lg no-underline pr-6">
                 <a class="" href="https://www.facebook.com/shm.tkch7/">
                     <i class="fab fa-facebook"></i>
                 </a>
@@ -58,6 +65,7 @@
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
+            @endauth
         </div>
         <div class="w-full bg-white shadow flex flex-col my-4 p-6">
             <p class="text-xl font-semibold pb-5">新着記事一覧</p>
