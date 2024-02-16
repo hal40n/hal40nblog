@@ -6,7 +6,8 @@ use App\Models\Article;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\HTTP;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
 {
@@ -53,24 +54,20 @@ class ArticleController extends Controller
         $article->body = $request->body;
 
         if ($request->hasFile('image')) {
-        $image = $request->file('image');
-        $imageName = time() . '.' . $image->getClientOriginalExtension();
-        $image->move(public_path('images'), $imageName);
-        $article->images = 'images/' . $imageName;
-    } else {
-        if (!$request->hasFile('image')) {
-            $response = Http::get('https://api.unsplash.com/photos/random', [
-                'query' => 'finance',
-                'client_id' => config('services.unsplash.access_key'),
-            ]);
-            $image = optional($response->json())[0]['urls']['regular'] ?? null;
-            if ($image) {
-                $imageName = time() . '_dummy_image.jpg';
-                file_put_contents(public_path('images/' . $imageName), file_get_contents($image));
-                $article->images = 'images/' . $imageName;
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+            $article->images = 'images/' . $imageName;
+        } else {
+            $defaultImagePath = 'storage/stock-1863880_1280.jpg';
+            $article->images = $defaultImagePath;
+            $storagePath = storage_path('app/public/' . $defaultImagePath);
+            $publicPath = public_path($defaultImagePath);
+            if (!file_exists($publicPath) && file_exists($storagePath)) {
+                Storage::disk('public')->makeDirectory('images');
+                symlink($storagePath, $publicPath);
             }
         }
-    }
 
         $user->articles()->save($article);
         return redirect(route('articles.index'));
