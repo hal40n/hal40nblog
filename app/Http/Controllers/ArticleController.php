@@ -18,7 +18,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::latest('created_at')->paginate(5);
+        $articles = Article::with('tags')->latest('created_at')->paginate(5);
 
         $recentlyPosts = Article::latest('created_at')->take(5)->get();
         return view('index', ['articles' => $articles, 'recentlyPosts' => $recentlyPosts]);
