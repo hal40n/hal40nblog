@@ -45,7 +45,7 @@
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Financial Freedom</a>
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Frugal Living</a>
                 <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Money Psychology</a>
-                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Money Mindfullness</a>
+                <a href="#" class="hover:bg-gray-400 rounded py-2 px-4 mx-2">Money Mindfulness</a>
             </div>
         </div>
     </nav>

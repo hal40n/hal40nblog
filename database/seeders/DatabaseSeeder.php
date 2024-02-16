@@ -17,18 +17,22 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // ユーザーを生成
-        $users = User::factory(100)->create();
-        
+        //$users = User::factory(100)->create();
+
         // タグを生成
         $tags = Tag::factory(20)->create();
-        
+
         // ユーザーごとに記事を生成し、各記事にランダムな数のタグをアタッチする
-        foreach ($users as $user) {
-            Article::factory(20)->create([
-                'user_id' => $user->id,
-            ])->each(function ($article) use ($tags) {
-                $article->tags()->attach($tags->random(random_int(1, 5)));
-            });
-        }
+        // foreach ($users as $user) {
+        //     Article::factory(20)->create([
+        //         'user_id' => $user->id,
+        //     ])->each(function ($article) use ($tags) {
+        //         $article->tags()->attach($tags->random(random_int(1, 5)));
+        //     });
+        // }
+
+        $this->call([
+            UserSeeder::class,
+        ]);
     }
 }

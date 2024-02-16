@@ -17,6 +17,9 @@ class ArticleFactory extends Factory
     public function definition()
     {
         $date = $this->faker->dateTimeBetween('-1year');
+
+        $user = User::find(1);
+
         return [
             'title' => $this->faker->sentence(),
             'body' => $this->faker->paragraph(),
